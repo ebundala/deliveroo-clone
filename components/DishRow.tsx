@@ -16,7 +16,7 @@ export type TDishRowProps = {
     image: SanityImageAssetDocument
 }
 export function DishRow({ id, name, price, description, image }: TDishRowProps) {
-    const [valueFormattedWithSymbol, valueFormattedWithoutSymbol, symbol] = formatCurrency({ amount: Number(price), code: "USD" });
+    const [valueFormattedWithSymbol, valueFormattedWithoutSymbol, symbol] = formatCurrency({ amount: Number(price.toPrecision(4)), code: "USD" });
     const [isPressed, setIsPressed] = useState(false);
     const dispatch = useDispatch();
     const items = useSelector((state: RootState) => selectBasketItemWithId(state, id) );
