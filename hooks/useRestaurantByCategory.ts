@@ -9,7 +9,8 @@ type TFeaturedItem = {
     description:string
     restaurants:TRestaurant[]
 }
-type TRestaurant = {   
+type TRestaurant = {
+    
     _id:string
     name:string
     description:string
@@ -20,6 +21,7 @@ type TRestaurant = {
     lng:number}
     category: string;
     image: SanityImageAssetDocument;
+    dishes: { _id: string; name: string; description: string; image: SanityImageAssetDocument; price: number; }[];  
     
 }
 export function useFeaturedRestaurants(id:string) {

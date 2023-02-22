@@ -11,5 +11,6 @@ export default `*[_type=='category' && _id == $id]{
       address,
       location,    
       rating,
+      "dishes":*[_type=="dishes"&&references(^._id)]{_id,name,description,image,price}
     }
   }`

@@ -41,7 +41,7 @@ export default function FeaturedRow({id,title,description}:TFeaturedRawProps) {
          address:v.address,
          description:v.description,
          category:v.category,
-         dishes:[],
+         dishes:v.dishes,
          lng:v.location.lat,lon:v.location.lng,
          imageUrl:urlFor(v.image).url()}}></RestaurantCard>
          )}

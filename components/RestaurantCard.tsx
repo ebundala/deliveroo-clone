@@ -2,6 +2,8 @@ import React from 'react';
 import { View, Text, TouchableOpacity, Image } from 'react-native';
 import { StarIcon } from 'react-native-heroicons/solid';
 import { MapPinIcon } from 'react-native-heroicons/outline';
+import { useNavigation,NavigationProp } from '@react-navigation/native';
+import { SanityImageAssetDocument } from '@sanity/client';
 export type TRestaurantCardProps = {
     id:string
     imageUrl:string
@@ -10,13 +12,18 @@ export type TRestaurantCardProps = {
     address:string
     description:string
     category:string
-    dishes:{id:string,name:string}[]
+    dishes:{_id:string,name:string,description:string,image:SanityImageAssetDocument,price:number}[]
     lng:number
     lon:number
 }
-export function RestaurantCard({ id, imageUrl, name, rating, address, description, category, dishes, lng: lat, lon }: TRestaurantCardProps) {
+export function RestaurantCard({ id, imageUrl, name, rating, address, description, category, dishes, lng, lon }: TRestaurantCardProps) {
+    const navigation:NavigationProp<{restaurant:TRestaurantCardProps}>  = useNavigation();
     return (
-        <TouchableOpacity className='bg-white mr-3 shadow'>
+        <TouchableOpacity onPress={()=>{
+            navigation.navigate("restaurant" ,{
+            id, imageUrl, name, rating, address, description, category, dishes, lng, lon 
+        })
+        }} className='bg-white mr-3 shadow'>
             <Image source={{ uri: imageUrl }}
                 className="h-64 w-64 rounded-sm" />
             <View className='px-3 pb-4'>
