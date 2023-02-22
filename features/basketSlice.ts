@@ -47,5 +47,6 @@ export interface BasketState {
 export const { addToBasket, removeFromBasket } = basketSlice.actions
 export const selectBasketItems = (state:RootState)=>state.basket.items;
 export const selectBasketItemWithId = (state:RootState,id:string)=>state.basket.items.filter((v)=>v.id === id);
+export const selectBasketTotal = (state:RootState)=>state.basket.items.reduce((total,item)=>total+=item.price,0);
 
 export default basketSlice.reducer
