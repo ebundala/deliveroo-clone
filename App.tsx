@@ -8,6 +8,9 @@ import RestaurantScreen from './screens/RestaurantScreen';
 import { store } from './store/store'
 import { Provider } from 'react-redux'
 import BasketScreen from './screens/BasketScreen';
+import PrepareOrderScreen from './screens/PrepareOrderScreen';
+import DeliveryScreen from './screens/DeliveryScreen';
+import { View } from 'react-native';
 
 const Stack = createNativeStackNavigator();
 
@@ -16,16 +19,23 @@ export default function App() {
     <Provider store={store}>
     <SafeAreaProvider>
     <StatusBar style='auto'/>
-    <NavigationContainer>             
-    <Stack.Navigator>
+   
+    <NavigationContainer >             
+    <Stack.Navigator >
       <Stack.Screen name="home" component={HomeScreen} />
       <Stack.Screen name="restaurant" component={RestaurantScreen} />
       <Stack.Screen name="basket" component={BasketScreen} options={{
         presentation: "modal",headerShown:false
       }}/>
-
+       <Stack.Screen name="prepareOrder" component={PrepareOrderScreen} options={{
+        presentation: 'fullScreenModal',headerShown:false
+      }}/>
+        <Stack.Screen name="delivery" component={DeliveryScreen} options={{
+        presentation: 'fullScreenModal',headerShown:false
+      }}/>
     </Stack.Navigator>
   </NavigationContainer>
+ 
   </SafeAreaProvider>
   </Provider>
   );

@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, Image, ScrollView } from 'react-native'
 import React, { useMemo } from 'react'
-import { useNavigation } from '@react-navigation/native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
 import { selectRestaurant } from '../features/restaurantSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import { IDish, removeFromBasket, selectBasketItems, selectBasketTotal } from '../features/basketSlice';
@@ -11,7 +11,6 @@ import { urlFor } from '../sanity/sanity';
 import { formatCurrency } from 'react-native-format-currency';
 
 export default function BasketScreen() {
-    const navigation = useNavigation();
     const restaurant = useSelector(selectRestaurant)
     const items = useSelector(selectBasketItems)
     const basketTotal = useSelector(selectBasketTotal)
@@ -25,6 +24,7 @@ export default function BasketScreen() {
         return groupedItems;
     }, [items])
 
+    const navigation:NavigationProp<{prepareOrder:typeof cachedDishes}> = useNavigation();
 
     return (
         <SafeAreaView className='flex-1 bg-white'>
@@ -91,6 +91,9 @@ export default function BasketScreen() {
                         <Text className='font-extrabold'>{formatCurrency({ amount: Number((basketTotal * 1.2).toPrecision(4)), code: "USD" })[0]}</Text>
                     </View>
                     <TouchableOpacity
+                    onPress={()=>{
+                        navigation.navigate("prepareOrder",cachedDishes)
+                    }}
                         className='rounded-lg bg-[#35b8b2] p-4'>
                         <Text className='text-center text-white text-xl font-bold'>Place order</Text>
                     </TouchableOpacity>

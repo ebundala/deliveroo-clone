@@ -21,6 +21,7 @@ export interface BasketState {
     name: 'basket',
     initialState,
     reducers: {
+      
       addToBasket: (state,action:PayloadAction<IDish>) => {
         // Redux Toolkit allows us to write "mutating" logic in reducers. It
         // doesn't actually mutate the state because it uses the Immer library,

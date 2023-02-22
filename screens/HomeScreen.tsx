@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLayoutEffect } from 'react';
 import { useNavigation } from '@react-navigation/native';
-import { Image, SafeAreaView, ScrollView, Text, TextInput, View } from 'react-native';
+import { Image, SafeAreaView, ScrollView, StatusBar, Text, TextInput, View } from 'react-native';
 import { ChevronDownIcon, UserIcon,MagnifyingGlassIcon, AdjustmentsHorizontalIcon } from "react-native-heroicons/outline"
 import { PrimaryColor } from '../constants/primaryColor';
 import Categories from '../components/Categories';
@@ -19,8 +19,7 @@ export function HomeScreen() {
    const featuredCategories = useFeaturedCategories();
    
     return (
-        <SafeAreaView className='mt-8 px-3'>
-
+        <SafeAreaView className='px-3' style={{marginTop:StatusBar.currentHeight}}>
             <View className='flex-row  items-center space-x-2' >
                 <Image
                     source={require("../assets/rider.png")}
@@ -49,7 +48,7 @@ export function HomeScreen() {
             </View>
             <ScrollView contentContainerStyle={
                 {
-
+               paddingBottom:120
                 }
             } >
                 {/* categories */}
