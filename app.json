@@ -28,6 +28,12 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "a70ef4c6-5f27-4ed8-8499-bc7a278ecb8f"
+      }
+    },
+    "owner": "ebundala"
   }
 }
