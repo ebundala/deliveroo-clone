@@ -1,0 +1,1 @@
+export default `*[_type=='category']|order(name){_id,name,image}`
