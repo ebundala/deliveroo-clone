@@ -19,7 +19,7 @@ export function HomeScreen() {
    const featuredCategories = useFeaturedCategories();
    
     return (
-        <SafeAreaView className='px-3' style={{marginTop:StatusBar.currentHeight}}>
+        <SafeAreaView className='px-3' style={{marginTop:(StatusBar.currentHeight??0)+8}}>
             <View className='flex-row  items-center space-x-2' >
                 <Image
                     source={require("../assets/rider.png")}

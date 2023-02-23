@@ -12,13 +12,15 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/a70ef4c6-5f27-4ed8-8499-bc7a278ecb8f"
     },
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.ebundala.deliverooclone"
     },
     "android": {
       "adaptiveIcon": {
@@ -35,6 +37,9 @@
         "projectId": "a70ef4c6-5f27-4ed8-8499-bc7a278ecb8f"
       }
     },
-    "owner": "ebundala"
+    "owner": "ebundala",
+    "runtimeVersion": {
+      "policy": "sdkVersion"
+    }
   }
 }
