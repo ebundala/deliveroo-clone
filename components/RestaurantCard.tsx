@@ -34,7 +34,7 @@ export function RestaurantCard({ id, imageUrl, name, rating, address, descriptio
                     <Text className='text-green-500'>{rating}</Text>
                     <Text className=' text-xs text-gray-500'>{category}</Text>
                 </View>
-                <View className='flex-row'>
+                <View className='flex-row items-center'>
                     <MapPinIcon color="gray" opacity={0.4} size={22} />
                     <Text className='text-xs text-gray-500'>{address}</Text>
                 </View>
