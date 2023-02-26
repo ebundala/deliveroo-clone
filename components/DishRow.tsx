@@ -23,7 +23,6 @@ export function DishRow({ id, name, price, description, image }: TDishRowProps) 
 
     const addItemToBasket = () => {
         dispatch(addToBasket({ id, name, price, description, image }));
-        console.log(items);
     };
     const removeItemFromBasket = () => {
         dispatch(removeFromBasket({ id }));
