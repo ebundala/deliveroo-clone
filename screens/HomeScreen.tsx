@@ -19,7 +19,7 @@ export function HomeScreen() {
    const featuredCategories = useFeaturedCategories();
    
     return (
-        <SafeAreaView className='px-3' style={{marginTop:(StatusBar.currentHeight??0)+8}}>
+        <SafeAreaView className='px-3' style={{marginTop:(StatusBar.currentHeight??0)+10}}>
             <View className='flex-row  items-center space-x-2' >
                 <Image
                     source={require("../assets/rider.png")}
@@ -40,9 +40,18 @@ export function HomeScreen() {
 
             </View>
             <View className='flex-row pt-3 pb-1 space-x-2 items-center'>
-                <View className='flax-row space-x-1 bg-gray-200 rounded-3xl p-2 flex-1'>
-                    <MagnifyingGlassIcon  color={PrimaryColor}/>
-                    <TextInput className='flex-1' placeholder='Restaurants & Cuisine'  keyboardType='default'/>
+                <View className='flex-row space-x-1 bg-gray-200 rounded-3xl  flex-1 p-2' >
+                   
+                 
+                      <MagnifyingGlassIcon className='w-1/6'width={28} height={28} color={PrimaryColor}  /> 
+                  
+                     
+                    <TextInput  onChangeText={(v)=>{}} 
+                   className='w-10/12'
+                     placeholder='Restaurants & Cuisine'
+                     
+                     />
+                   
                 </View>
                 <AdjustmentsHorizontalIcon size={28} color={PrimaryColor}/>
             </View>
@@ -50,7 +59,10 @@ export function HomeScreen() {
                 {
                paddingBottom:120
                 }
-            } >
+
+            }
+            showsVerticalScrollIndicator={false} 
+            >
                 {/* categories */}
                 <Categories/>
                 {/* featured */}

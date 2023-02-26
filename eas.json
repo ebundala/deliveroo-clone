@@ -6,17 +6,20 @@
     "development": {
       "developmentClient": true,
       "distribution": "internal",
+      "channel": "master",
       "ios": {
         "resourceClass": "m1-medium"
       }
     },
     "preview": {
       "distribution": "internal",
+      "channel": "master",
       "ios": {
         "resourceClass": "m1-medium"
       }
     },
     "production": {
+      "channel": "master",
       "ios": {
         "resourceClass": "m1-medium"
       }
