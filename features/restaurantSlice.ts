@@ -12,7 +12,7 @@ export interface IRestaurant{
     category:string
     dishes:{_id:string,name:string,description:string,image:SanityImageAssetDocument,price:number}[]
     lng:number
-    lon:number
+    lat:number
 }
 export interface RestaurantState {
     restaurant: IRestaurant | null

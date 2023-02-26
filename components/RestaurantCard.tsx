@@ -14,14 +14,16 @@ export type TRestaurantCardProps = {
     category:string
     dishes:{_id:string,name:string,description:string,image:SanityImageAssetDocument,price:number}[]
     lng:number
-    lon:number
+    lat:number
 }
-export function RestaurantCard({ id, imageUrl, name, rating, address, description, category, dishes, lng, lon }: TRestaurantCardProps) {
+export function RestaurantCard({ id, imageUrl, name, rating, address, description, category, dishes, lng, lat }: TRestaurantCardProps) {
+   
+   
     const navigation:NavigationProp<{restaurant:TRestaurantCardProps}>  = useNavigation();
     return (
         <TouchableOpacity onPress={()=>{
             navigation.navigate("restaurant" ,{
-            id, imageUrl, name, rating, address, description, category, dishes, lng, lon 
+            id, imageUrl, name, rating, address, description, category, dishes, lng, lat 
         })
         }} className='bg-white mr-3 shadow'>
             <Image source={{ uri: imageUrl }}

@@ -17,11 +17,11 @@ export default function RestaurantScreen() {
             headerShown: false
         });
     }, []);
-    const { params: { id, imageUrl, name, rating, address, description, category, dishes, lng, lon } } = useRoute<RouteProp<{ restaurant: TRestaurantCardProps }>>();
+    const { params: { id, imageUrl, name, rating, address, description, category, dishes, lng, lat } } = useRoute<RouteProp<{ restaurant: TRestaurantCardProps }>>();
     const dispatch = useDispatch();
-
+    
     useEffect(() => {
-        dispatch(setRestaurant({ id, imageUrl, name, rating, address, description, category, dishes, lng, lon }))
+        dispatch(setRestaurant({ id, imageUrl, name, rating, address, description, category, dishes, lng, lat }))
     }, [])
 
     return (

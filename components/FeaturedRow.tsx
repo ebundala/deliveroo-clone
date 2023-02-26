@@ -34,17 +34,20 @@ export default function FeaturedRow({id,title,description}:TFeaturedRawProps) {
         className='pt-4'
         >
          {featured&&featured?.restaurants?.map((v)=>
-         <RestaurantCard key={v._id} {...{ id:v._id,
-         name:v.name,
-        
+         {
+          
+          return    (<RestaurantCard key={v._id} {...{ id:v._id,
+         name:v.name,        
          rating:v.rating,
          address:v.address,
          description:v.description,
          category:v.category,
          dishes:v.dishes,
-         lng:v.location.lat,lon:v.location.lng,
-         imageUrl:urlFor(v.image).url()}}></RestaurantCard>
-         )}
+         lng:v.location.lng,lat:v.location.lat,
+         imageUrl:urlFor(v.image).url()}} />
+         );
+               })}
+        
         
         </ScrollView>
     </View>

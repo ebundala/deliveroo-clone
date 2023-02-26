@@ -38,7 +38,7 @@ export default function DeliveryScreen() {
       <MapView 
       initialRegion={
         {
-            latitude:restaurant!.lon!,
+            latitude:restaurant!.lat!,
             longitude:restaurant!.lng!,
             latitudeDelta:0.005,
             longitudeDelta:0.005
@@ -49,7 +49,7 @@ export default function DeliveryScreen() {
       >
         <Marker 
         coordinate={{
-            latitude:restaurant!.lon,
+            latitude:restaurant!.lat,
             longitude:restaurant!.lng
         }}
         title={restaurant?.name}
@@ -58,7 +58,7 @@ export default function DeliveryScreen() {
         pinColor={PrimaryColor}
         />
       </MapView>
-      <SafeAreaView className='bg-white flex-row items-center  space-x-5 h-20 '>
+      <SafeAreaView className='bg-white flex-row items-center  space-x-5 h-20 pb-6'>
         <Image source={require("../assets/rider.png")}
         className="h-12 w-12 bg-gray-300  rounded-full ml-5"
         />
