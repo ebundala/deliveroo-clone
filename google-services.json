@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "215885198462",
+    "project_id": "deliveroo-clone-81f65",
+    "storage_bucket": "deliveroo-clone-81f65.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:215885198462:android:b7cc2a8b451eb821b2942f",
+        "android_client_info": {
+          "package_name": "com.ebundala.deliverooclone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAYHobX7E8iNzv0euXJWiPmpr-n1fj-Uqw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

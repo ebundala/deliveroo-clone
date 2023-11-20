@@ -1,7 +1,7 @@
 import React from 'react';
 import { useLayoutEffect } from 'react';
-import { useNavigation } from '@react-navigation/native';
-import { Image, SafeAreaView, ScrollView, StatusBar, Text, TextInput, View } from 'react-native';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { Image, Pressable, SafeAreaView, ScrollView, StatusBar, Text, TextInput, View } from 'react-native';
 import { ChevronDownIcon, UserIcon,MagnifyingGlassIcon, AdjustmentsHorizontalIcon } from "react-native-heroicons/outline"
 import { PrimaryColor } from '../constants/primaryColor';
 import Categories from '../components/Categories';
@@ -10,7 +10,7 @@ import { useFeaturedCategories } from '../hooks/useFeaturedCategories';
 
 export function HomeScreen() {
    
-    const navigation = useNavigation()
+    const navigation:NavigationProp<{notifications:undefined}> = useNavigation()
     useLayoutEffect(() => {
         navigation.setOptions({
             headerShown: false
@@ -36,7 +36,11 @@ export function HomeScreen() {
                         <ChevronDownIcon size={20} color={PrimaryColor} />
                     </View>
                 </View>
+                <Pressable onPress={()=>{
+                    navigation.navigate("notifications")
+                }}>
                 <UserIcon size={28} color={PrimaryColor}/>
+                </Pressable>
 
             </View>
             <View className='flex-row pt-3 pb-1 space-x-2 items-center'>
